@@ -1,3 +1,4 @@
+/*
 let listaEmail = [
 "nicoli.perla@example.com",
 "rossi.mario@example.com",
@@ -68,4 +69,27 @@ if (emailTrovata) {
     console.log("La tua email c'è.");
 } else {
     console.log("La tua email non c'è.");
+}
+*/
+
+
+// Genera un numero casuale per user compreso tra 1 e 6
+let numeroCasualeUser = Math.floor(Math.random() * 6) + 1;
+console.log((" User ") + numeroCasualeUser) 
+
+// Genera un numero casuale per computer compreso tra 1 e 6
+let numeroCasualeComputer = Math.floor(Math.random() * 6) + 1;
+console.log(("Computer ") + numeroCasualeComputer)
+
+if (numeroCasualeUser > numeroCasualeComputer) {
+    console.log("User ha vinto")
+    
+}
+else if (numeroCasualeUser < numeroCasualeComputer) {
+    console.log("Computer ha vinto")
+    
+}
+else if (numeroCasualeUser === numeroCasualeComputer) {
+    console.log("pareggio")
+    
 }
