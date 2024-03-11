@@ -73,23 +73,72 @@ if (emailTrovata) {
 */
 
 
-// Genera un numero casuale per user compreso tra 1 e 6
-let numeroCasualeUser = Math.floor(Math.random() * 6) + 1;
-console.log((" User ") + numeroCasualeUser) 
+// // Genera un numero casuale per user compreso tra 1 e 6
+// let numeroCasualeUser = Math.floor(Math.random() * 6) + 1;
+// console.log((" User") + numeroCasualeUser) 
 
-// Genera un numero casuale per computer compreso tra 1 e 6
-let numeroCasualeComputer = Math.floor(Math.random() * 6) + 1;
-console.log(("Computer ") + numeroCasualeComputer)
+// // Genera un numero casuale per computer compreso tra 1 e 6
+// let numeroCasualeComputer = Math.floor(Math.random() * 6) + 1;
+// console.log(("Computer ") + numeroCasualeComputer)
 
-if (numeroCasualeUser > numeroCasualeComputer) {
-    console.log("User ha vinto")
+// if (numeroCasualeUser > numeroCasualeComputer) {
+//     console.log("User ha vinto")
     
-}
-else if (numeroCasualeUser < numeroCasualeComputer) {
-    console.log("Computer ha vinto")
+// }
+// else if (numeroCasualeUser < numeroCasualeComputer) {
+//     console.log("Computer ha vinto")
     
-}
-else if (numeroCasualeUser === numeroCasualeComputer) {
-    console.log("pareggio")
+// }
+// else if (numeroCasualeUser === numeroCasualeComputer) {
+//     console.log("pareggio")
     
+// }
+
+
+
+
+// Array contenente i numeri dei dadi
+const numeriDadi = [1, 2, 3, 4, 5, 6];
+
+// Funzione per generare un numero casuale tra min e max
+function generaNumeroCasuale(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
+// Funzione per generare il percorso dell'immagine del dado
+function percorsoImmagineDado(numero) {
+    return `dadi/${numero}.svg`;
+}
+
+// Funzione per lanciare i dadi per l'utente e il computer
+function lancioDadi() {
+    // Genera i numeri casuali dei dadi per user
+    let numeroCasualeDado1User = generaNumeroCasuale(1, 6);
+    let numeroCasualeDado2User = generaNumeroCasuale(1, 6);
+    
+    // Genera i numeri casuali dei dadi per il computer
+    let numeroCasualeDado1Computer = generaNumeroCasuale(1, 6);
+    let numeroCasualeDado2Computer = generaNumeroCasuale(1, 6);
+    
+
+    // Ottieni i percorsi delle immagini corrispondenti ai numeri casuali generati
+    let percorsoDado1User = percorsoImmagineDado(numeroCasualeDado1User);
+    let percorsoDado2User = percorsoImmagineDado(numeroCasualeDado2User);
+    let percorsoDado1Computer = percorsoImmagineDado(numeroCasualeDado1Computer);
+    let percorsoDado2Computer = percorsoImmagineDado(numeroCasualeDado2Computer);
+
+    // immagini dei dadi al DOM per l'utente e il computer
+    document.getElementById('dado1-user').innerHTML = `<img src="${percorsoDado1User}" alt="Dado User 1">`;
+    document.getElementById('dado2-user').innerHTML = `<img src="${percorsoDado2User}" alt="Dado User 2">`;
+    document.getElementById('dado1-computer').innerHTML = `<img src="${percorsoDado1Computer}" alt="Dado Computer 1">`;
+    document.getElementById('dado2-computer').innerHTML = `<img src="${percorsoDado2Computer}" alt="Dado Computer 2">`;
+
+    // Visualizza i numeri dei dadi nel console per l'utente e il computer
+    console.log("User", numeroCasualeDado1User + numeroCasualeDado2User);
+    console.log("Computer", numeroCasualeDado1Computer + numeroCasualeDado2Computer);
+     
+}
+
+// Lancio dei dadi all'avvio della pagina
+lancioDadi();
+
