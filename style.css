@@ -1,11 +1,11 @@
 body {
-    background-color: #56e797;
+    background-color: #000000;
 }
 .container {
     width: 1200px;
-    height: 500px;
+    height: 650px;
     margin: 0 auto;
-    background-color: #0da1db;
+    background-color: #5e6061;
 }
 h1 {
     text-align: center;
@@ -15,7 +15,7 @@ h1 {
     justify-content: center
 }
 #lanciaDadi {
-    margin-top: 50px;
+   margin-top: 20px;
     padding: 8px 16px;
     font-size: 16px;
     background-color: #007bff;
@@ -27,7 +27,10 @@ h1 {
 
 #risultato {
     margin-top: 20px;
-    font-size: 20px;
+    font-size: 30px;
+    font-weight: 800;
+    text-align: center;
+    color: #ffffff;
 }
 .right {
   width: 49%;

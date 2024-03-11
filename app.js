@@ -73,29 +73,6 @@ if (emailTrovata) {
 */
 
 
-// // Genera un numero casuale per user compreso tra 1 e 6
-// let numeroCasualeUser = Math.floor(Math.random() * 6) + 1;
-// console.log((" User") + numeroCasualeUser) 
-
-// // Genera un numero casuale per computer compreso tra 1 e 6
-// let numeroCasualeComputer = Math.floor(Math.random() * 6) + 1;
-// console.log(("Computer ") + numeroCasualeComputer)
-
-// if (numeroCasualeUser > numeroCasualeComputer) {
-//     console.log("User ha vinto")
-    
-// }
-// else if (numeroCasualeUser < numeroCasualeComputer) {
-//     console.log("Computer ha vinto")
-    
-// }
-// else if (numeroCasualeUser === numeroCasualeComputer) {
-//     console.log("pareggio")
-    
-// }
-
-
-
 
 // Array contenente i numeri dei dadi
 const numeriDadi = [1, 2, 3, 4, 5, 6];
@@ -124,6 +101,7 @@ function lancioDadi() {
     // percorsi delle immagini corrispondenti ai numeri casuali generati
     let percorsoDado1User = percorsoImmagineDado(numeroCasualeDado1User);
     let percorsoDado2User = percorsoImmagineDado(numeroCasualeDado2User);
+
     let percorsoDado1Computer = percorsoImmagineDado(numeroCasualeDado1Computer);
     let percorsoDado2Computer = percorsoImmagineDado(numeroCasualeDado2Computer);
 
@@ -133,11 +111,28 @@ function lancioDadi() {
     document.getElementById('dado1-computer').innerHTML = `<img src="${percorsoDado1Computer}" alt="Dado Computer 1">`;
     document.getElementById('dado2-computer').innerHTML = `<img src="${percorsoDado2Computer}" alt="Dado Computer 2">`;
 
-    // numeri dei dadi nel console per l'utente e il computer
-    console.log("User", numeroCasualeDado1User + numeroCasualeDado2User);
-    console.log("Computer", numeroCasualeDado1Computer + numeroCasualeDado2Computer);
-     
+    // calcola il punteggio per l'utente e il computer
+    let punteggioUser = numeroCasualeDado1User + numeroCasualeDado2User;
+    let punteggioComputer = numeroCasualeDado1Computer + numeroCasualeDado2Computer;
+
+    // visualizza i punteggi nel console per l'utente e il computer
+    console.log("User:", punteggioUser);
+    console.log("Computer:", punteggioComputer);
+
+    // calcolo risultato e visualizzalo nell`ID "risultato"
+    let risultato;
+    if (punteggioUser > punteggioComputer) {
+        risultato = "User ha vinto";
+    } else if (punteggioUser < punteggioComputer) {
+        risultato = "Computer ha vinto";
+    } else {
+        risultato = "Pareggio";
+    }
+    document.getElementById('risultato').innerText = risultato;
 }
+
+// Collega il click del button "Lancia"
+document.getElementById('lanciaDadi').addEventListener('click', lancioDadi);
 
 // Lancio dei dadi all'avvio della pagina
 lancioDadi();
