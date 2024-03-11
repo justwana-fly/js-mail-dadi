@@ -121,7 +121,7 @@ function lancioDadi() {
     let numeroCasualeDado2Computer = generaNumeroCasuale(1, 6);
     
 
-    // Ottieni i percorsi delle immagini corrispondenti ai numeri casuali generati
+    // percorsi delle immagini corrispondenti ai numeri casuali generati
     let percorsoDado1User = percorsoImmagineDado(numeroCasualeDado1User);
     let percorsoDado2User = percorsoImmagineDado(numeroCasualeDado2User);
     let percorsoDado1Computer = percorsoImmagineDado(numeroCasualeDado1Computer);
@@ -133,7 +133,7 @@ function lancioDadi() {
     document.getElementById('dado1-computer').innerHTML = `<img src="${percorsoDado1Computer}" alt="Dado Computer 1">`;
     document.getElementById('dado2-computer').innerHTML = `<img src="${percorsoDado2Computer}" alt="Dado Computer 2">`;
 
-    // Visualizza i numeri dei dadi nel console per l'utente e il computer
+    // numeri dei dadi nel console per l'utente e il computer
     console.log("User", numeroCasualeDado1User + numeroCasualeDado2User);
     console.log("Computer", numeroCasualeDado1Computer + numeroCasualeDado2Computer);
      
